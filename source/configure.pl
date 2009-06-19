@@ -54,11 +54,10 @@ top_srcdir = $top_srcdir
 builddir = $builddir
 top_builddir = $top_builddir
 
-include $top_srcdir/$cfg_fname
-include $top_builddir/$cfg_fname
-include $srcdir/$mak_fname
-
 EOF
+-e "$top_srcdir/$cfg_name" and print OUT "include $top_srcdir/$cfg_name";
+-e "$top_builddir/$cfg_name" and print OUT "include $top_builddir/$cfg_name";
+print OUT "include $srcdir/$mak_fname";
 
 close OUT;
 }
